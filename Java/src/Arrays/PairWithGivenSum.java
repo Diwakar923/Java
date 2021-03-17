@@ -23,8 +23,6 @@ public class PairWithGivenSum {
 	private static void pairSum(int[] arr, int sum) {
 		for(int i=0; i<arr.length-1;i++){
 			for(int j=i+1;j<arr.length;j++){
-				if(i==4)
-					System.out.println("**");
 				if(arr[i]+arr[j]==sum)
 					System.out.println("pair found at index "+ i +" and "+j);
 			}
