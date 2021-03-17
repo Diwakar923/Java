@@ -1,5 +1,7 @@
 package Arrays;
 
+import java.util.Arrays;
+
 //Find a pair with the given sum in an array
 //Input:
 //arr = [8, 7, 2, 5, 3, 1]
@@ -21,11 +23,18 @@ public class PairWithGivenSum {
 	}
 
 	private static void pairSum(int[] arr, int sum) {
-		for(int i=0; i<arr.length-1;i++){
-			for(int j=i+1;j<arr.length;j++){
-				if(arr[i]+arr[j]==sum)
-					System.out.println("pair found at index "+ i +" and "+j);
-			}
+		Arrays.sort(arr);
+		Arrays.toString(arr);
+		int low =0;
+		int high = arr.length-1;
+		
+		while(low<high){
+			if(arr[low]+arr[high]==sum)
+				System.out.println("pair found at index "+ low +" and "+high);
+			if(arr[low]+arr[high]>sum)
+				high--;
+			else
+				low++;
 		}
 	}
 
