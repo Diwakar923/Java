@@ -1,6 +1,8 @@
 package Arrays;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 //Find a pair with the given sum in an array
 //Input:
@@ -23,18 +25,14 @@ public class PairWithGivenSum {
 	}
 
 	private static void pairSum(int[] arr, int sum) {
-		Arrays.sort(arr);
-		Arrays.toString(arr);
-		int low =0;
-		int high = arr.length-1;
-		
-		while(low<high){
-			if(arr[low]+arr[high]==sum)
-				System.out.println("pair found at index "+ low +" and "+high);
-			if(arr[low]+arr[high]>sum)
-				high--;
-			else
-				low++;
+		Map<Integer,Integer> hm = new HashMap<>();
+		for(int i=0; i<arr.length; i++){
+			if(hm.containsKey(sum-arr[i])){
+				System.out.println("Pair found at index "+hm.get(sum-arr[i])+" and "+ i);
+			}
+			else{
+				hm.put(arr[i], i);
+			}
 		}
 	}
 
