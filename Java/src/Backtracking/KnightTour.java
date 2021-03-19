@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class KnightTour {
 
-	public static final int N = 5;
+	public static final int N = 8;
 	public static final int[] row={2,1,-1,-2,-2,-1,1,2,2};
 	public static final int[] col={1,2,2,1,-1,-2,-2,-1,1};
 
